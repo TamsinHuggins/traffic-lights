@@ -1,16 +1,20 @@
+/* eslint-disable react/prop-types */
 import "../App.css";
 
-import { useState } from "react";
-
-const Light = () => {
-  const [lightOn, setLightOn] = useState(false);
+const Light = (props) => {
+  console.log(props.color);
+  let lightColor = "greenOn";
+  if (props.color === 0) {
+    lightColor = "redOn";
+  } else if (props.color === 1) {
+    lightColor = "yellowOn";
+  }
 
   return (
     <button
-      className={lightOn ? "lightOn" : "lightOff"}
-      onClick={() => {
-        setLightOn(!lightOn);
-      }}
+      id={lightColor}
+      className={props.isOn ? lightColor : "lightOff"}
+      onClick={props.handleClick}
     ></button>
   );
 };

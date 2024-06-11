@@ -1,14 +1,11 @@
-import Light from "./components/Light";
 import LightBox from "./components/LightBox";
 
 function App() {
+  // 3 possible states, tff, fft, ftf
+
   return (
     <>
-      <LightBox>
-        <Light />
-        <Light />
-        <Light />
-      </LightBox>
+      <LightBox />
     </>
   );
 }
